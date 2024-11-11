@@ -204,7 +204,6 @@ def create_image_gallery(uploaded_files):
                 // Click event to hide image and track clicks
                 container.addEventListener('click', function() {
                     this.classList.add('fading'); // Add fading class for animation
-                    
                     setTimeout(() => {
                         this.style.display = 'none';  // Hide the image container after animation
                     }, 1000);  // Delay to match the animation duration
@@ -264,8 +263,9 @@ def create_image_gallery(uploaded_files):
 
     # Replace placeholder with actual image data (formatted as a JavaScript array)
     html_content = html_template.replace('IMAGES_PLACEHOLDER', f'[{", ".join(image_files)}]')
-    # Replace placeholder with the video path
-    html_content = html_content.replace('VIDEO_PATH', './video/WhatsApp%20Video%202024-11-11%20at%2013.08.48.mp4')
+    # Replace placeholder with the video path (ensure this is the correct relative path or use an absolute URL)
+    video_path = './video/birthday.mp4'  # Modify this line accordingly
+    html_content = html_content.replace('VIDEO_PATH', video_path)
 
     # Create output HTML file in memory
     output_file = BytesIO()
