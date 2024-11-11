@@ -263,9 +263,12 @@ def create_image_gallery(uploaded_files):
 
     # Replace placeholder with actual image data (formatted as a JavaScript array)
     html_content = html_template.replace('IMAGES_PLACEHOLDER', f'[{", ".join(image_files)}]')
-    # Replace placeholder with the video path (ensure this is the correct relative path or use an absolute URL)
-    video_path = './video/birthday.mp4'  # Modify this line accordingly
+    video_path = os.path.join(os.getcwd(), 'video', 'birthday.mp4')
+    video_path = video_path.replace("\\", "/")  # Ensure cross-platform compatibility
+
+    # Replace placeholder with the actual video path
     html_content = html_content.replace('VIDEO_PATH', video_path)
+
 
     # Create output HTML file in memory
     output_file = BytesIO()
