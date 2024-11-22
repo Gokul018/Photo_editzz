@@ -5,6 +5,7 @@ import random
 import streamlit as st
 from io import BytesIO
 
+
 # Function to create the image gallery
 def create_image_gallery(uploaded_files):
     # List of 80 random small quotes
